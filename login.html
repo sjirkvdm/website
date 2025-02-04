@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-900">
+    <nav class="bg-blue-600 text-white p-4">
+        <div class="max-w-4xl mx-auto flex justify-between items-center">
+            <h1 class="text-xl font-bold">Mijn Website</h1>
+            <ul class="flex space-x-4">
+                <li><a href="index.html" class="hover:underline">Home</a></li>
+                <li><a href="dashboard.html" class="hover:underline">Dashboard</a></li>
+                <li><a href="login.html" class="hover:underline">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="bg-blue-600 text-white p-4 text-center">
+        <h1 class="text-3xl font-bold">Login</h1>
+    </header>
+
+    <main class="max-w-4xl mx-auto p-6">
+        <section class="bg-white shadow-md p-6 rounded-lg">
+            <h2 class="text-2xl font-semibold mb-4">Log in met OAuth</h2>
+            <p class="text-gray-700">Kies een provider om in te loggen:</p>
+
+            <div class="mt-4 space-y-2">
+                <button onclick="oauthLogin('google')" class="w-full bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded">
+                    Login met Google
+                </button>
+                <button onclick="oauthLogin('github')" class="w-full bg-gray-900 hover:bg-gray-800 text-white font-bold py-2 px-4 rounded">
+                    Login met GitHub
+                </button>
+                <button onclick="oauthLogin('microsoft')" class="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+                    Login met Microsoft
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-blue-600 text-white text-center p-4 mt-6">
+        <p>&copy; 2025 Mijn Website</p>
+    </footer>
+
+    <script>
+        function oauthLogin(provider) {
+            let url = "";
+            switch (provider) {
+                case "google":
+                    url = "https://accounts.google.com/o/oauth2/auth?client_id=JOUW_CLIENT_ID&redirect_uri=JOUW_REDIRECT_URI&response_type=token&scope=email profile";
+                    break;
+                case "github":
+                    url = "https://github.com/login/oauth/authorize?client_id=JOUW_CLIENT_ID&redirect_uri=JOUW_REDIRECT_URI&scope=user";
+                    break;
+                case "microsoft":
+                    url = "https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=JOUW_CLIENT_ID&redirect_uri=JOUW_REDIRECT_URI&response_type=token&scope=user.read";
+                    break;
+            }
+            window.location.href = url;
+        }
+    </script>
+</body>
+</html>
