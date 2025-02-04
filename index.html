@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mijn Website</title>
+    <title>Home</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body class="bg-gray-100 text-gray-900">
     <nav class="bg-blue-600 text-white p-4">
@@ -17,33 +18,22 @@
             </ul>
         </div>
     </nav>
-    
+
     <header class="bg-blue-600 text-white p-4 text-center">
         <h1 class="text-3xl font-bold">Welkom op mijn website</h1>
     </header>
-    
+
     <main class="max-w-4xl mx-auto p-6">
         <section class="bg-white shadow-md p-6 rounded-lg">
-            <h2 class="text-2xl font-semibold mb-4">Over mij</h2>
-            <p class="text-gray-700">Dit is een voorbeeld van een eenvoudige website met HTML, Tailwind CSS en JavaScript.</p>
-        </section>
-        
-        <section class="mt-6 bg-white shadow-md p-6 rounded-lg">
-            <h2 class="text-2xl font-semibold mb-4">Interactie</h2>
-            <button id="alertButton" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                Klik hier
-            </button>
+            <h2 class="text-2xl font-semibold mb-4">Over deze website</h2>
+            <p class="text-gray-700">Dit is de startpagina van je website. Voeg hier je content toe.</p>
         </section>
     </main>
-    
+
     <footer class="bg-blue-600 text-white text-center p-4 mt-6">
         <p>&copy; 2025 Mijn Website</p>
     </footer>
 
-    <script>
-        document.getElementById("alertButton").addEventListener("click", function() {
-            alert("Je hebt op de knop geklikt!");
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
