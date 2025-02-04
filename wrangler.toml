@@ -1,0 +1,6 @@
+name = "mijn-website"
+type = "javascript"
+
+[site]
+bucket = "./"
+entry-point = "index.html"
